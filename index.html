@@ -27,101 +27,38 @@
     .item:hover {
       transform: scale(1.1);
     }
-    
 
+    .camera {
+      position: absolute;
+      top: 50%; 
+      left: 50%; 
+      width: 480px; 
+      transform: translate(-50%, -50%);
+      z-index: 2;
+    }
 
-.camera {
-  position: absolute;
-  top: 50%; 
-  left: 50%; 
-  width: 480px; 
-  transform: translate(-50%, -50%);
-  z-index: 2;
-}
+    .camera:hover {
+      transform: translate(-50%, -50%) scale(1.1);
+    }
 
-.camera:hover {
-  transform: translate(-50%, -50%) scale(1.1);
-}
+    /* Top row */
+    .coca { top: 12%; left: 25%; width: 120px; transform: rotate(10deg); }
+    .alex { top: 10%; left: 40%; width: 180px; transform: rotate(-10deg); }
+    .cine { top: 8%; right: 28%; width: 230px; transform: rotate(5deg); }
+    .calendario { top: 10%; right: 10%; width: 280px; }
 
-/* Top row */
-.coca { 
-  top: 12%; 
-  left: 25%; 
-  width: 120px; 
-  transform: rotate(10deg);
+    /* Left column */
+    .carta { top: 35%; left: 12%; width: 280px; transform: rotate(10deg); }
+    .dice { bottom: 8%; left: 8%; width: 180px; }
 
-}
+    /* Bottom row */
+    .cerillos { bottom: 12%; left: 28%; width: 270px; }
+    .beso { bottom: 5%; left: 50%; width: 230px; }
+    .uno { top: 5%; left: 5%; width: 220px; }
 
-.alex { 
-  top: 10%; 
-  left: 40%; 
-  width: 180px; 
-  transform: rotate(-10deg);
-}
-
-.cine { 
-  top: 8%; 
-  right: 28%; 
-  width: 230px; 
-    transform: rotate(5deg);
-
-}
-
-.calendario { 
-  top: 10%; 
-  right: 10%; 
-  width: 280px; 
-
-}
-
-/* Left column */
-.carta { 
-  top: 35%; 
-  left: 12%; 
-  width: 280px; 
-      transform: rotate(10deg);
-
-}
-
-.dice { 
-  bottom: 8%; 
-  left: 8%; 
-  width: 180px; 
-}
-
-/* Bottom row */
-.cerillos { 
-  bottom: 12%; 
-  left: 28%; 
-  width: 270px; 
-}
-
-.beso { 
-  bottom: 5%; 
-  left: 50%; 
-  width: 230px; 
-}
-
-.uno { 
-  top: 5%; 
-  left: 5%; 
-  width: 220px; 
-}
-
-/* Right column */
-.ale { 
-  top: 42%; 
-  right: 13%; 
-  width: 200px; 
-  transform: rotate(5deg);
-  
-}
-    
-.cassette { 
-  bottom: 3%; 
-  right: 10%; 
-  width: 300px; 
-}
+    /* Right column */
+    .ale { top: 42%; right: 13%; width: 200px; transform: rotate(5deg); }
+    .cassette { bottom: 3%; right: 10%; width: 300px; }
 
     /* MODALS */
     .modal {
@@ -137,7 +74,7 @@
     .modal-content {
       background: white;
       padding: 24px;
-      max-width: 500px;
+      max-width: 700px;
       border-radius: 12px;
       text-align: center;
       position: relative;
@@ -146,6 +83,18 @@
     .modal img {
       max-width: 100%;
       border-radius: 10px;
+    }
+
+    .image-row {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 15px;
+    }
+
+    .image-row img {
+      width: 45%;
     }
 
     .close {
@@ -164,27 +113,26 @@
   <div id="manualModal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeManual()">×</span>
-      <h2>Instrucciones </h2>
+      <h2>Instrucciones</h2>
       <p>
         Existen tantas cosas que me encantan de ti, no solo por cómo me haces sentir, sino por quién eres.  
-        Aqui puedes encontrar algunas, asi como uno que otro detalle. </p>
-       <p> <b> Da click en los tokens para descubrirlas. </b>💌 </p>
-           <p>  - Con cariño, Ale  </p>
+        Aqui puedes encontrar algunas, asi como uno que otro detalle.
+      </p>
+      <p><b>Da click en los tokens para descubrirlas.</b> 💌</p>
+      <p>- Con cariño, Ale</p>
     </div>
   </div>
 
   <!-- IMAGE POPUP -->
   <div id="imageModal" class="modal">
-    <div class="modal-content">
+    <div class="modal-content" id="dynamicContent">
       <span class="close" onclick="closeImage()">×</span>
-      <img id="modalImage" src="" />
     </div>
   </div>
 
-
   <!-- COLLAGE -->
   <div class="collage">
-     <img class="item camera" src="camara2.png" onclick="openImage('memory12.jpg')" />
+    <img class="item camera" src="camara2.png" onclick="openImage('memory12.jpg')" />
     <img class="item coca" src="coca.jpeg" onclick="openImage('memory2.jpg')" />
     <img class="item dice" src="dados.png" onclick="openImage('memory3.jpg')" />
     <img class="item cassette" src="cassette.png" onclick="openImage('memory4.jpg')" />
@@ -192,13 +140,14 @@
     <img class="item ale" src="ale.png" onclick="openImage('memory6.jpg')" />
     <img class="item beso" src="beso.png" onclick="openImage('memory7.png')" />
     <img class="item calendario" src="calendario.png" onclick="openImage('memory8.jpg')" />
-    <img class="item carta" src="carta.png" onclick="openImage('memory9.jpg')" />
+
+    <!-- CARTA CON DOS IMAGENES -->
+    <img class="item carta" src="carta.png"
+         onclick="openImage('memory9.png','memory9b.png')" />
+
     <img class="item cerillos" src="ferrari.jpeg" onclick="openImage('memory10.jpg')" />
     <img class="item cine" src="cine.png" onclick="openImage('memory11.jpg')" />
     <img class="item uno" src="uno.png" onclick="openImage('memory1.png')" />
-    
-  </div>
-
   </div>
 
   <script>
@@ -209,10 +158,33 @@
     function closeManual() {
       document.getElementById("manualModal").style.display = "none";
     }
-   
-    function openImage(src) {
-      document.getElementById("modalImage").src = src;
-      document.getElementById("imageModal").style.display = "flex";
+
+    function openImage(src1, src2 = null) {
+      const modal = document.getElementById("imageModal");
+      const content = document.getElementById("dynamicContent");
+
+      content.innerHTML = `<span class="close" onclick="closeImage()">×</span>`;
+
+      if (src2) {
+        const row = document.createElement("div");
+        row.className = "image-row";
+
+        const img1 = document.createElement("img");
+        img1.src = src1;
+
+        const img2 = document.createElement("img");
+        img2.src = src2;
+
+        row.appendChild(img1);
+        row.appendChild(img2);
+        content.appendChild(row);
+      } else {
+        const img = document.createElement("img");
+        img.src = src1;
+        content.appendChild(img);
+      }
+
+      modal.style.display = "flex";
     }
 
     function closeImage() {
