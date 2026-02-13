@@ -184,6 +184,29 @@
     </div>
   </div>
 
+  <!-- LETTER POPUP -->
+<div id="letterModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeLetter()">×</span>
+    <h2>Para ti 💌</h2>
+    <p>
+      Amor,<br><br>
+Como sabes no soy tan buena con las palabras y no siempre me es fácil expresar lo que siento, ni demostrarlo como otras personas lo hacen. Pero quiero hacer algo nuevo para mi, me importas lo suficiente como para querer hacerlo diferente.<br><br>
+Por lo que decidí que lo mejor sería demostrarlo con algo que me es más natural. Así que, si estás leyendo esto, es porque me importas lo suficiente como para aprender HTML por ti.<br><br>
+Al inicio las cosas fueron complicadas, al menos para mí. Creo que venía del miedo, miedo de no saber hacia dónde íbamos ni el tipo de persona que eras, miedo de sentir más de lo que debía, miedo de no estar en el mismo lugar. Y si te soy honesta me quedé porque algo en ti me hacía sentir que valía la pena intentarlo.<br><br>
+Hoy lo tengo más claro. Y parte de esa claridad es por ti, por el esfuerzo que has hecho para que me sienta segura para atender aquello que me tiene intranquila. Y quiero prometerte algo, voy a hacer todo lo que esté en mis manos para que estés seguro. Y aunque hay momentos en los que dudo, incluso cuando no sé exactamente hacia dónde va esto, hay algo que no cambia, que quiero descubrirlo contigo.<br><br>
+Encontré en ti, una gran persona, inteligente, ocurrente, extrovertido y tan auténtico, alguien que me hace querer ser más honesta conmigo misma. Más yo.  <br><br>
+Quiero ser tu persona. Que cuando algo pese, sepas que estoy aquí para quererte y apoyarte sin importar que. Quiero ser una amiga, conocerte en todas tus versiones, incluso en las que no son tan fáciles de mostrar. Espero convertirme en tu lugar seguro como tu te estás convirtiendo en el mío.<br><br>
+Y tal vez no siempre encuentre las palabras perfectas, pero esto sí lo tengo claro, no me estoy quedando por costumbre ni por miedo. Me estoy quedando porque me importas y te quiero. Porque quiero construir contigo algo que valga la pena.<br><br>
+Si te soy honesta para mi un te quiero no es lo primordial, y no malinterpretes te quiero mucho, pero para mi un “te elijo” es aún más poderoso, aún en los días en los que no estemos de acuerdo o nos equivoquemos y aunque todavía estemos descubriendo qué forma toma nuestra relación, hay algo que no dudo, te elijo.<br>
+      <br>
+      Con cariño,<br>
+      Ale
+    </p>
+  </div>
+</div>
+
+
   <!-- COLLAGE -->
   <div class="collage">
      <img class="item camera" src="camara2.png" onclick="openImage('memory12.jpg')" />
@@ -194,7 +217,7 @@
     <img class="item ale" src="ale.png" onclick="openImage('memory6.jpg')" />
     <img class="item beso" src="beso.png" onclick="openImage('memory7.png')" />
     <img class="item calendario" src="calendario.png" onclick="openImage('memory8.jpg')" />
-    <img class="item carta" src="carta.png" onclick="openImage('memory9.jpg')" />
+    <img class="item carta" src="carta.png" onclick="openLetter()" />
     <img class="item cerillos" src="ferrari.jpeg" onclick="openImage('memory10.jpg')" />
     <img class="item cine" src="cine.png" onclick="openImage('memory11.jpg')" />
     <img class="item uno" src="uno.png" onclick="openImage('memory1.png')" />
@@ -212,7 +235,13 @@
     function closeManual() {
       document.getElementById("manualModal").style.display = "none";
     }
+    function openLetter() {
+      document.getElementById("letterModal").style.display = "flex";
+    }
 
+    function closeLetter() {
+      document.getElementById("letterModal").style.display = "none";
+    }
     function openImage(src) {
       document.getElementById("modalImage").src = src;
       document.getElementById("imageModal").style.display = "flex";
