@@ -2,9 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Alex & Ale</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+  <title>For Alex 💖</title>
   <style>
     body {
       margin: 0;
@@ -24,117 +22,21 @@
       position: absolute;
       cursor: pointer;
       transition: transform 0.2s ease;
-      user-select: none;
-      -webkit-user-drag: none;
-      filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.2));
     }
 
     .item:hover {
       transform: scale(1.1);
     }
 
-      .item {
-  position: absolute;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-  user-select: none;
-  -webkit-user-drag: none;
-}
+    /* Example positions – tweak these to match your inspo */
+    .camera { top: 40%; left: 35%; width: 220px; }
+    .fries { bottom: 10%; left: 45%; width: 100px; }
+    .dice { bottom: 15%; left: 10%; width: 90px; }
+    .cassette { bottom: 10%; right: 10%; width: 220px; }
+    .alex { top: 15%; left: 45%; width: 120px; }
+    .ale { top: 35%; right: 15%; width: 120px; }
 
-.item:hover {
-  transform: scale(1.08);
-}
-
-/* Center focal point */
-.camera { 
-  top: 50%; 
-  left: 50%; 
-  width: 420px; 
-}
-
-/* Names above camera */
-.alex { 
-  top: 10%; 
-  left: 38%; 
-  width: 150px; 
-  transform: rotate(-4deg); 
-}
-
-.ale {  
-  top: 22%; 
-  left: 55%; 
-  width: 150px; 
-  transform: rotate(4deg); 
-}
-
-/* Top row small objects */
-.beso { 
-  top: 8%; 
-  left: 18%; 
-  width: 90px;  
-  transform: rotate(-8deg); 
-}
-
-.cine { 
-  top: 8%; 
-  right: 18%; 
-  width: 120px; 
-  transform: rotate(6deg); 
-}
-
-.calendario { 
-  top: 6%; 
-  right: 5%;  
-  width: 130px; 
-  transform: rotate(-3deg); 
-}
-
-/* Left side framing */
-.carta { 
-  top: 40%; 
-  left: 5%; 
-  width: 160px; 
-  transform: rotate(-6deg); 
-}
-
-.dice {  
-  bottom: 22%; 
-  left: 10%; 
-  width: 100px; 
-  transform: rotate(10deg); 
-}
-
-/* Bottom framing */
-.fries {    
-  bottom: 6%;  
-  left: 40%; 
-  width: 120px; 
-  transform: rotate(-4deg); 
-}
-
-.cerillos { 
-  bottom: 8%; 
-  left: 22%; 
-  width: 150px; 
-  transform: rotate(5deg); 
-}
-
-.uno {      
-  bottom: 8%; 
-  right: 22%; 
-  width: 160px; 
-  transform: rotate(-6deg); 
-}
-
-/* Right anchor */
-.cassette { 
-  bottom: 10%; 
-  right: 4%; 
-  width: 260px; 
-  transform: rotate(3deg); 
-}
-
-    /* Modals */
+    /* MODALS */
     .modal {
       display: none;
       position: fixed;
@@ -152,7 +54,6 @@
       border-radius: 12px;
       text-align: center;
       position: relative;
-      animation: pop 0.25s ease-out;
     }
 
     .modal img {
@@ -168,37 +69,24 @@
       font-size: 26px;
       font-weight: bold;
     }
-
-    @keyframes pop {
-      from { transform: scale(0.9); opacity: 0; }
-      to   { transform: scale(1);   opacity: 1; }
-    }
-
-    /* Mobile tweak */
-    @media (max-width: 768px) {
-      .camera { width: 180px; left: 25%; }
-      .cassette { width: 180px; }
-      .alex, .ale { width: 110px; }
-    }
   </style>
 </head>
-
 <body>
 
-  <!-- Manual Modal -->
+  <!-- MANUAL POPUP -->
   <div id="manualModal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeManual()">×</span>
-      <h2>Instrucciones 💌</h2>
+      <h2>How to use this page 💌</h2>
       <p>
-        Da click en los objetos :)<br/>
-        Cada uno representa un recuerdo nuestro.<br/>
-        Te quiero 🩷
+        Click on the objects to reveal memories.  
+        Each one is something that reminds me of us.  
+        I love you 🩷
       </p>
     </div>
   </div>
 
-  <!-- Image Modal -->
+  <!-- IMAGE POPUP -->
   <div id="imageModal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeImage()">×</span>
@@ -206,7 +94,7 @@
     </div>
   </div>
 
-  <!-- Collage -->
+  <!-- COLLAGE -->
   <div class="collage">
     <img class="item camera" src="camara.png" onclick="openImage('images/memory1.jpg')" />
     <img class="item fries" src="papas.png" onclick="openImage('images/memory2.jpg')" />
